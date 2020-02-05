@@ -4,12 +4,10 @@
         "gru"
     ],
     "name": "passwort-jwt",
-    "build": [
-        {
-            "src": "app.js",
-            "use": "@now/node"
-        }
-    ],
+    "build": {
+        "src": "app.js",
+        "use": "@now/node"
+    },
     "routes": [
         {
             "src": "/(.*)",

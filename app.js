@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const cookieParser = require('cookie-parser')
+const path = require('path');
 
 // load env variables 
 dotenv.config({path : './.env'});
@@ -19,6 +20,7 @@ connectDB(env.db);
 require('./config/passport')(passport)
 
 // EJS 
+app.set("views", path.join(__dirname, "views"));
 app.use(expressLayouts);
 app.set('view engine' , 'ejs' )
 
