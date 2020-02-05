@@ -1,4 +1,23 @@
 {
     "version": 2,
-    "name": "passport-jwt"
+    "regions": [
+        "gru"
+    ],
+    "name": "passwort-jwt",
+    "builds": [
+        {
+            "src": "app.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.js"
+        }
+    ],
+    "env": {
+        "JWT_SECRET": "@jwt_secret",
+        "MONGO_URI": "@mongo_uri"
+    }
 }
